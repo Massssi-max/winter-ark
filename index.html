@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101114">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Winter Arc">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Winter Arc</title>
+<style>
+:root{color-scheme:dark;--bg:#090a0d;--panel:#17191f;--panel2:#20232b;--line:#2c303a;--muted:#969daa;--text:#f5f6f8;--blue:#55a7ff;--green:#39d98a;--orange:#ffad55;--pink:#ff6e9e;--purple:#ad8cff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1a2230 0,#0b0c10 46%,#090a0d 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 0 calc(84px + env(safe-area-inset-bottom))}
+button,input,select{font:inherit}button{cursor:pointer;color:inherit}.app{max-width:760px;margin:auto;padding:18px 16px 24px}.top{display:flex;align-items:center;justify-content:space-between;margin:8px 2px 20px}.eyebrow{font-size:11px;letter-spacing:.15em;color:var(--muted);font-weight:700}.brand{font-size:28px;font-weight:850;letter-spacing:-1.3px;margin-top:3px}.brand span{color:var(--blue)}.date{font-size:12px;color:var(--muted);text-align:right}.card{background:linear-gradient(145deg,rgba(30,34,43,.97),rgba(20,22,28,.97));border:1px solid var(--line);border-radius:22px;padding:17px;margin-bottom:14px;box-shadow:0 10px 30px #0002}.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}.card h2{font-size:16px;margin:0;font-weight:750;letter-spacing:-.2px}.muted{color:var(--muted)}.small{font-size:12px}.progress-head{display:flex;justify-content:space-between;align-items:end}.big-number{font-size:36px;font-weight:850;letter-spacing:-1.5px}.progress-track{height:12px;background:#343945;border-radius:99px;overflow:hidden;margin:13px 0 8px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:99px;transition:width .25s}.task{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #ffffff0d}.task:first-child{border-top:0}.check{appearance:none;width:23px;height:23px;border:1.5px solid #646b78;border-radius:8px;display:grid;place-items:center;flex:none;background:#111319}.check:checked{background:var(--green);border-color:var(--green)}.check:checked:after{content:"✓";font-size:15px;font-weight:900;color:#062013}.task-main{flex:1;min-width:0}.task-name{font-size:14px;font-weight:650}.task-meta{font-size:11px;color:var(--muted);margin-top:3px}.weight{font-size:11px;color:var(--muted);white-space:nowrap}.icon-btn{border:1px solid var(--line);background:#ffffff08;border-radius:10px;padding:7px 9px;color:var(--muted)}.primary{background:linear-gradient(135deg,#358dff,#4cbbef);border:0;border-radius:12px;padding:11px 14px;color:white;font-weight:750}.secondary{background:#ffffff0a;border:1px solid var(--line);border-radius:12px;padding:10px 13px;color:var(--text);font-weight:650}.danger{color:#ff8793}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>*{min-width:0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#ffffff08;border:1px solid #ffffff0c;border-radius:15px;padding:12px}.stat .value{font-size:23px;font-weight:800;margin-top:4px}.tabs{position:fixed;z-index:10;bottom:0;left:0;right:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#101217ed;backdrop-filter:blur(18px);border-top:1px solid #ffffff15;display:flex;justify-content:center;gap:4px}.tab{flex:1;max-width:150px;border:0;background:transparent;color:#89909d;padding:8px 3px;border-radius:12px;font-size:10px;font-weight:650}.tab b{display:block;font-size:19px;margin-bottom:3px}.tab.active{color:var(--blue);background:#55a7ff16}.screen{display:none}.screen.active{display:block}.section-title{font-size:23px;font-weight:850;letter-spacing:-.7px;margin:10px 2px 4px}.section-sub{font-size:12px;color:var(--muted);margin:0 2px 16px}.field{display:flex;flex-direction:column;gap:6px;margin:10px 0}.field label{font-size:11px;color:var(--muted);font-weight:700}.field input,.field select{width:100%;background:#0f1116;border:1px solid var(--line);border-radius:11px;color:var(--text);padding:11px 12px;outline:none}.field input:focus,.field select:focus{border-color:var(--blue)}.task-edit,.exercise{padding:12px 0;border-top:1px solid #ffffff12}.task-edit:first-child,.exercise:first-child{border-top:0}.pill{font-size:10px;border:1px solid var(--line);padding:5px 8px;border-radius:99px;color:var(--muted)}.day-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:11px 0;border-top:1px solid #ffffff10}.day-label{font-size:12px;font-weight:800;color:var(--blue)}.chart{height:190px;display:flex;align-items:stretch;gap:7px;padding:12px 0 0}.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0;gap:6px}.bar-area{height:145px;width:100%;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(to top,#ffffff08 1px,transparent 1px);background-size:100% 25%;border-bottom:1px solid #ffffff22;position:relative}.bar{width:min(25px,72%);min-height:2px;border-radius:7px 7px 2px 2px;background:linear-gradient(180deg,var(--green),#268dff);position:relative}.bar.zero{background:#3b414d}.bar-label{font-size:9px;color:var(--muted);white-space:nowrap}.bar-value{font-size:9px;color:#cbd1db;margin-bottom:3px}.axis{display:flex;justify-content:space-between;color:#777f8d;font-size:9px;margin-top:3px}.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:10px;color:var(--muted)}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px}.empty{padding:24px;text-align:center;color:var(--muted);font-size:13px}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#252a34;border:1px solid #454d5c;border-radius:12px;padding:10px 14px;font-size:12px;display:none;z-index:30;max-width:90%;text-align:center}.modal-back{position:fixed;inset:0;background:#0009;display:none;align-items:flex-end;justify-content:center;z-index:20;padding:12px}.modal{width:min(600px,100%);background:#1a1d24;border:1px solid var(--line);border-radius:22px;padding:18px;max-height:85vh;overflow:auto}.modal.show{display:flex}.modal h3{margin:0 0 12px}.footer-note{font-size:10px;color:#7f8794;line-height:1.5;margin:12px 3px}.hidden{display:none!important}
+@media(min-width:650px){.app{padding-top:28px}.dashboard-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.dashboard-grid .card{height:100%}.tabs{bottom:14px;left:50%;right:auto;transform:translateX(-50%);width:min(520px,calc(100% - 28px));border:1px solid var(--line);border-radius:20px}.app{padding-bottom:105px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div><div class="eyebrow">YOUR PERSONAL PERFORMANCE SYSTEM</div><div class="brand">WINTER <span>ARC</span></div></div><div class="date" id="headerDate">—<br><span>2026 / 27</span></div></header>
+
+<section class="screen active" id="screen-today">
+  <div class="card">
+    <div class="progress-head"><div><div class="eyebrow">TODAY'S PROGRESS</div><div class="big-number" id="todayPercent">0%</div></div><div style="text-align:right"><div class="muted small" id="taskCount">0 von 0 erledigt</div><div class="pill" id="dayStatus">DAILY CHECK-IN</div></div></div>
+    <div class="progress-track"><div class="progress-fill" id="todayFill"></div></div>
+    <div class="muted small" id="progressHint">Jeder erledigte Schritt zählt.</div>
+  </div>
+  <div class="dashboard-grid">
+    <div class="card"><div class="card-head"><h2>Deine To-dos</h2><button class="icon-btn" onclick="openTaskEditor()">＋ Bearbeiten</button></div><div id="taskList"></div></div>
+    <div class="card"><div class="card-head"><h2>Heute im Training</h2><span class="pill" id="workoutTag">PLAN</span></div><div id="todayWorkout"></div><button class="secondary" style="width:100%;margin-top:12px" onclick="showScreen('training')">Trainingsplan öffnen →</button></div>
+  </div>
+  <div class="card"><div class="card-head"><h2>Dein Überblick</h2><span class="muted small" id="arcDates"></span></div><div class="grid2"><div class="stat"><div class="muted small">Tage im Arc</div><div class="value" id="arcDay">1</div></div><div class="stat"><div class="muted small">Ø dieser Woche</div><div class="value" id="weekAvg">0%</div></div></div></div>
+</section>
+
+<section class="screen" id="screen-training">
+  <div class="section-title">Training</div><div class="section-sub">Dein Wochenplan – anpassbar und mit Erholungstagen.</div>
+  <div class="card"><div class="card-head"><h2>Wochenübersicht</h2><button class="icon-btn" onclick="openWorkoutEditor()">＋ Plan bearbeiten</button></div><div id="trainingPlan"></div></div>
+  <div class="card"><div class="card-head"><h2>Einheit im Detail</h2><span class="pill" id="detailDay">MONTAG</span></div><div id="workoutDetail"></div></div>
+</section>
+
+<section class="screen" id="screen-stats">
+  <div class="section-title">Statistiken</div><div class="section-sub">Dein Fortschritt über die Zeit – basierend auf gewichteten Aufgaben.</div>
+  <div class="card"><div class="card-head"><h2>Wochenübersicht</h2><span class="pill">TAGESPROGRESS</span></div><div class="legend"><span><i class="dot" style="background:var(--green)"></i>Erledigt</span><span>0–100 % pro Tag</span></div><div id="weekChart"></div><div class="axis"><span>0 %</span><span>25 %</span><span>50 %</span><span>75 %</span><span>100 %</span></div><div class="muted small" style="margin-top:10px" id="weekSummary"></div></div>
+  <div class="card"><div class="card-head"><h2>Wochenleistung</h2><span class="pill">LETZTE 8 WOCHEN</span></div><div id="weeksChart"></div></div>
+  <div class="card"><div class="card-head"><h2>Monatsübersicht</h2><span class="pill">LETZTE 6 MONATE</span></div><div id="monthChart"></div></div>
+  <div class="card"><div class="card-head"><h2>Historie</h2><span class="muted small">Gespeicherte Tage</span></div><div id="history"></div></div>
+</section>
+
+<section class="screen" id="screen-settings">
+  <div class="section-title">Einstellungen</div><div class="section-sub">Passe deinen Winter Arc an dich an.</div>
+  <div class="card"><h2>Zeitraum</h2><div class="field"><label>STARTDATUM</label><input type="date" id="startDate"></div><div class="field"><label>ENDDATUM</label><input type="date" id="endDate"></div><button class="primary" onclick="saveDates()">Zeitraum speichern</button></div>
+  <div class="card"><h2>Aufgaben verwalten</h2><p class="muted small">Gewicht bestimmt, wie stark eine Aufgabe deinen Tagesfortschritt beeinflusst. Frühere Tageswerte bleiben unverändert.</p><div id="settingsTasks"></div><button class="primary" onclick="openTaskEditor()">＋ Aufgabe hinzufügen / bearbeiten</button></div>
+  <div class="card"><h2>Daten & Installation</h2><p class="muted small">Deine Daten werden lokal auf diesem Gerät gespeichert. Exportiere regelmäßig eine Sicherung.</p><div class="row"><button class="secondary" onclick="exportData()">Daten exportieren</button><button class="secondary" onclick="document.getElementById('importFile').click()">Importieren</button><input id="importFile" type="file" accept="application/json" class="hidden" onchange="importData(event)"></div><p class="footer-note">iPhone: In Safari auf „Teilen“ → „Zum Home-Bildschirm“ → „Hinzufügen“. Für Installation und Offline-Modus muss diese App über eine HTTPS-Adresse bereitgestellt werden. Ein Reset wird beim Öffnen bzw. bei erneuter Aktivität nach Mitternacht nachgeholt; iOS-Web-Apps können nicht zuverlässig im Hintergrund um 00:00 Uhr ausgeführt werden.</p><button class="secondary danger" onclick="if(confirm('Alle Winter-Arc-Daten wirklich löschen?')){localStorage.removeItem(KEY);location.reload()}">Alle Daten löschen</button></div>
+</section>
+</div>
+
+<nav class="tabs">
+<button class="tab active" data-screen="today" onclick="showScreen('today')"><b>◉</b>Heute</button>
+<button class="tab" data-screen="training" onclick="showScreen('training')"><b>⌁</b>Training</button>
+<button class="tab" data-screen="stats" onclick="showScreen('stats')"><b>▥</b>Statistik</button>
+<button class="tab" data-screen="settings" onclick="showScreen('settings')"><b>⚙</b>Setup</button>
+</nav>
+<div class="toast" id="toast"></div>
+
+<div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()"><div class="modal" id="modal"></div></div>
+
+<script>
+const KEY='winterArc.v1';
+const DAY_NAMES=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+const DEFAULT_TASKS=[
+ {id:'move',name:'Training / Bewegung',weight:3,description:'Training oder geplante aktive Erholung'},
+ {id:'food',name:'Ausgewogen essen',weight:2,description:'Regelmäßig und ausreichend essen'},
+ {id:'water',name:'Wasser trinken',weight:1,description:'Über den Tag verteilt trinken'},
+ {id:'sleep',name:'Schlaf',weight:2,description:'8–10 Stunden anstreben'},
+ {id:'mobility',name:'Mobility',weight:1,description:'Kurze, angenehme Beweglichkeitseinheit'},
+ {id:'recovery',name:'Regeneration beachten',weight:2,description:'Belastung an Energie und Erholung anpassen'}
+];
+const DEFAULT_PLAN=[
+ {day:1,name:'Montag · Gym A',type:'gym',focus:'Ganzkörper – Kraft',exercises:[['Goblet Squat / Kniebeuge','3','8–12'],['Brustpresse','3','8–12'],['Latzug','3','8–12'],['Rudern am Kabel','2','10–12'],['Plank','3','20–40 Sek.']]},
+ {day:2,name:'Dienstag · Tennis',type:'sport',focus:'Technik, Koordination & Beinarbeit',exercises:[['Tennis-Training','1','45–90 Min.'],['Lockere Mobilisation','1','10 Min.']]},
+ {day:3,name:'Mittwoch · Gym B',type:'gym',focus:'Ganzkörper – Calisthenics-Basics',exercises:[['Assistierte Klimmzüge / Latzug','3','6–10'],['Schulterdrücken','2','8–12'],['Beinpresse','3','10–12'],['Brustgestütztes Rudern','3','8–12'],['Dead Bug','3','8–10 je Seite']]},
+ {day:4,name:'Donnerstag · Erholung',type:'rest',focus:'Aktive Erholung',exercises:[['Spaziergang (optional)','1','15–30 Min.'],['Mobility (locker)','1','5–10 Min.']]},
+ {day:5,name:'Freitag · Gym C',type:'gym',focus:'Ganzkörper – Beine & Rumpf',exercises:[['Rumänisches Kreuzheben (leicht)','3','8–10'],['Beinstrecker','2','10–12'],['Brustpresse / Liegestütz-Variante','2','8–12'],['Kabelrudern','2','10–12'],['Seitstütz','2','15–30 Sek. je Seite']]},
+ {day:6,name:'Samstag · Ausdauer / Tennis',type:'sport',focus:'Lockere Grundlagenausdauer oder Tennis',exercises:[['Lockeres Radfahren / Joggen / Tennis','1','20–40 Min.']]},
+ {day:0,name:'Sonntag · Ruhetag',type:'rest',focus:'Erholung & Wochenrückblick',exercises:[['Erholung','1','Kein hartes Training']]}
+];
+function localISO(d=new Date()){const z=new Date(d.getTime()-d.getTimezoneOffset()*60000);return z.toISOString().slice(0,10)}
+function dateObj(s){return new Date(s+'T12:00:00')}
+function pretty(s,opts={day:'2-digit',month:'short'}){return dateObj(s).toLocaleDateString('de-DE',opts)}
+function defaultState(){return {tasks:DEFAULT_TASKS,plan:DEFAULT_PLAN,start:'2026-10-31',end:'2026-12-31',days:{},lastDate:localISO()}}
+let state=load();
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.tasks&&x.days)return {...x,plan:x.plan||DEFAULT_PLAN,start:x.start||'2026-10-31',end:x.end||'2026-12-31'}}catch(e){}return defaultState()}
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function ensureDay(d=localISO()){if(!state.days[d])state.days[d]={tasks:state.tasks.map(t=>({id:t.id,name:t.name,weight:t.weight,done:false})),updated:new Date().toISOString()};state.lastDate=d;save()}
+function syncDay(){const today=localISO();if(state.lastDate!==today){ensureDay(today);toast('Neuer Tag gestartet – der Vortag bleibt gespeichert.')}else ensureDay(today)}
+function current(){return state.days[localISO()]}
+function pct(day){if(!day||!day.tasks||!day.tasks.length)return 0;const total=day.tasks.reduce((s,t)=>s+(Number(t.weight)||1),0);if(!total)return 0;return Math.round(day.tasks.reduce((s,t)=>s+(t.done?(Number(t.weight)||1):0),0)/total*100)}
+function doneCount(day){return day?.tasks?.filter(t=>t.done).length||0}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.style.display='block';clearTimeout(window._toast);window._toast=setTimeout(()=>el.style.display='none',2300)}
+function showScreen(name){document.querySelectorAll('.screen').forEach(x=>x.classList.toggle('active',x.id==='screen-'+name));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.screen===name));if(name==='stats')renderStats();if(name==='training')renderTraining();if(name==='settings')renderSettings();window.scrollTo(0,0)}
+function renderToday(){
+ syncDay();const d=current(),p=pct(d);document.getElementById('headerDate').innerHTML= new Date().toLocaleDateString('de-DE',{weekday:'long',day:'2-digit',month:'long'})+'<br><span>WINTER ARC 2026 / 27</span>';
+ document.getElementById('todayPercent').textContent=p+'%';document.getElementById('todayFill').style.width=p+'%';document.getElementById('taskCount').textContent=doneCount(d)+' von '+d.tasks.length+' erledigt';document.getElementById('progressHint').textContent=p===100?'Stark – alle gewichteten Aufgaben erledigt.': 'Noch '+(100-p)+' Prozentpunkte bis zum Tagesziel.';
+ document.getElementById('taskList').innerHTML=d.tasks.length?d.tasks.map(t=>`<label class="task"><input class="check" type="checkbox" ${t.done?'checked':''} onchange="toggleTask('${t.id}',this.checked)"><span class="task-main"><span class="task-name">${esc(t.name)}</span><span class="task-meta">${esc(t.description||'')}</span></span><span class="weight">Gewicht ${t.weight}</span></label>`).join(''):'<div class="empty">Noch keine Aufgaben. Füge sie unter Setup hinzu.</div>';
+ const day=new Date().getDay(),w=state.plan.find(x=>x.day===day);document.getElementById('workoutTag').textContent=w?.type==='rest'?'RECOVERY':w?.type==='gym'?'GYM':'SPORT';document.getElementById('todayWorkout').innerHTML=w?`<div style="font-weight:750;margin-bottom:5px">${esc(w.name)}</div><div class="muted small">${esc(w.focus)}</div><div class="muted small" style="margin-top:10px">${w.exercises.length} Programmpunkte · ${w.type==='rest'?'Erholungstag':'geplante Einheit'}</div>`:'<div class="empty">Kein Training eingetragen.</div>';
+ const arcStart=dateObj(state.start),today=dateObj(localISO());document.getElementById('arcDay').textContent=Math.max(0,Math.floor((today-arcStart)/86400000)+1);document.getElementById('arcDates').textContent=pretty(state.start)+' – '+pretty(state.end);document.getElementById('weekAvg').textContent=weekAverage(localISO())+'%';
+}
+function toggleTask(id,v){const t=current().tasks.find(x=>x.id===id);if(t){t.done=v;current().updated=new Date().toISOString();save();renderToday()}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openModal(html){document.getElementById('modal').innerHTML=html;document.getElementById('modalBack').style.display='flex'}
+function closeModal(){document.getElementById('modalBack').style.display='none'}
+function openTaskEditor(){
+ const tasks=state.tasks;openModal(`<h3>To-dos anpassen</h3><div id="editTaskRows">${tasks.map((t,i)=>taskRow(t,i)).join('')}</div><button class="secondary" onclick="addTaskRow()">＋ Neue Aufgabe</button><div class="row" style="margin-top:16px"><button class="primary" onclick="saveTaskEditor()">Speichern</button><button class="secondary" onclick="closeModal()">Abbrechen</button></div><p class="footer-note">Änderungen gelten ab heute. Bereits gespeicherte Tage werden nicht rückwirkend verändert.</p>`)
+}
+function taskRow(t,i){return `<div class="task-edit" data-id="${esc(t.id)}"><div class="field"><label>AUFGABE</label><input class="t-name" value="${esc(t.name)}" placeholder="z. B. Mobility"></div><div class="row"><div class="field" style="flex:1"><label>GEWICHT (1–5)</label><input class="t-weight" type="number" min="1" max="5" value="${t.weight}"></div><div class="field" style="flex:2"><label>BESCHREIBUNG</label><input class="t-desc" value="${esc(t.description||'')}"></div><button class="icon-btn danger" onclick="this.closest('.task-edit').remove()">✕</button></div></div>`}
+function addTaskRow(){document.getElementById('editTaskRows').insertAdjacentHTML('beforeend',taskRow({id:'task_'+Date.now(),name:'',weight:1,description:''},0))}
+function saveTaskEditor(){const rows=[...document.querySelectorAll('.task-edit')];const tasks=rows.map((r,i)=>({id:r.dataset.id||'task_'+Date.now()+i,name:r.querySelector('.t-name').value.trim(),weight:Math.max(1,Math.min(5,Number(r.querySelector('.t-weight').value)||1)),description:r.querySelector('.t-desc').value.trim()})).filter(t=>t.name);if(!tasks.length){toast('Bitte mindestens eine Aufgabe behalten.');return}state.tasks=tasks;const today=localISO(),old=state.days[today];const doneMap=new Map((old?.tasks||[]).map(t=>[t.id,t.done]));state.days[today]={tasks:tasks.map(t=>({...t,done:doneMap.get(t.id)||false})),updated:new Date().toISOString()};save();closeModal();renderAll();toast('Aufgaben gespeichert.')}
+function openWorkoutEditor(){
+ openModal(`<h3>Trainingsplan bearbeiten</h3><p class="muted small">Wähle einen Wochentag und passe Fokus sowie Übungen an.</p><div class="field"><label>WOCHENTAG</label><select id="planDay">${DAY_NAMES.map((n,i)=>`<option value="${i}">${n}</option>`).join('')}</select></div><div id="planEditContent"></div><div class="row" style="margin-top:14px"><button class="primary" onclick="saveWorkoutEditor()">Speichern</button><button class="secondary" onclick="closeModal()">Schließen</button></div>`);
+ document.getElementById('planDay').addEventListener('change',renderPlanEdit);renderPlanEdit()
+}
+function renderPlanEdit(){const day=Number(document.getElementById('planDay').value),p=state.plan.find(x=>x.day===day)||{day,name:DAY_NAMES[day],type:'rest',focus:'Ruhetag',exercises:[]};document.getElementById('planEditContent').innerHTML=`<div class="field"><label>BEZEICHNUNG</label><input id="p-name" value="${esc(p.name)}"></div><div class="field"><label>ART</label><select id="p-type"><option value="gym" ${p.type==='gym'?'selected':''}>Gym</option><option value="sport" ${p.type==='sport'?'selected':''}>Sport / Tennis / Ausdauer</option><option value="rest" ${p.type==='rest'?'selected':''}>Ruhetag</option></select></div><div class="field"><label>FOKUS</label><input id="p-focus" value="${esc(p.focus)}"></div><div id="exerciseRows">${p.exercises.map((e,i)=>exerciseRow(e)).join('')}</div><button class="secondary" onclick="addExercise()">＋ Übung hinzufügen</button>`}
+function exerciseRow(e){return `<div class="exercise"><div class="field"><label>ÜBUNG</label><input class="e-name" value="${esc(e[0])}"></div><div class="row"><div class="field" style="flex:1"><label>SÄTZE</label><input class="e-sets" value="${esc(e[1])}"></div><div class="field" style="flex:2"><label>WIEDERHOLUNGEN / DAUER</label><input class="e-reps" value="${esc(e[2])}"></div><button class="icon-btn danger" onclick="this.closest('.exercise').remove()">✕</button></div></div>`}
+function addExercise(){document.getElementById('exerciseRows').insertAdjacentHTML('beforeend',exerciseRow(['Neue Übung','3','8–12']))}
+function saveWorkoutEditor(){const day=Number(document.getElementById('planDay').value),p={day,name:document.getElementById('p-name').value.trim()||DAY_NAMES[day],type:document.getElementById('p-type').value,focus:document.getElementById('p-focus').value.trim(),exercises:[...document.querySelectorAll('.exercise')].map(r=>[r.querySelector('.e-name').value.trim(),r.querySelector('.e-sets').value.trim(),r.querySelector('.e-reps').value.trim()]).filter(e=>e[0])};state.plan=state.plan.filter(x=>x.day!==day);state.plan.push(p);save();closeModal();renderTraining();renderToday();toast('Trainingsplan gespeichert.')}
+function renderTraining(){const sorted=[...state.plan].sort((a,b)=>((a.day+6)%7)-((b.day+6)%7));document.getElementById('trainingPlan').innerHTML=sorted.map(p=>`<div class="day-row"><div class="day-label">${DAY_NAMES[p.day].slice(0,2).toUpperCase()}</div><div><div class="task-name">${esc(p.name)}</div><div class="task-meta">${esc(p.focus)}</div></div><span class="pill">${p.type==='rest'?'REST':p.type==='gym'?'GYM':'SPORT'}</span></div>`).join('');const p=state.plan.find(x=>x.day===new Date().getDay())||state.plan[0];document.getElementById('detailDay').textContent=DAY_NAMES[p.day].toUpperCase();document.getElementById('workoutDetail').innerHTML=p.exercises.length?p.exercises.map(e=>`<div class="task"><div class="task-main"><div class="task-name">${esc(e[0])}</div><div class="task-meta">${esc(e[1])} Sätze · ${esc(e[2])}</div></div></div>`).join(''):'<div class="empty">Keine Übungen eingetragen.</div>'}
+function startWeek(s){const d=dateObj(s),day=(d.getDay()+6)%7;d.setDate(d.getDate()-day);return localISO(d)}
+function addDays(s,n){const d=dateObj(s);d.setDate(d.getDate()+n);return localISO(d)}
+function weekDates(s){const start=startWeek(s);return Array.from({length:7},(_,i)=>addDays(start,i))}
+function weekAverage(s){const ds=weekDates(s).filter(x=>x<=localISO());if(!ds.length)return 0;return Math.round(ds.reduce((a,x)=>a+pct(state.days[x]),0)/ds.length)}
+function chartBars(items){return `<div class="chart">${items.map(x=>`<div class="bar-col"><div class="bar-value">${x.value}%</div><div class="bar-area"><div class="bar ${x.value===0?'zero':''}" style="height:${Math.max(x.value,1)}%"></div></div><div class="bar-label">${esc(x.label)}</div></div>`).join('')}</div>`}
+function renderStats(){
+ const today=localISO(),days=weekDates(today);const weekItems=days.map(d=>({label:pretty(d,{weekday:'short',day:'2-digit'}),value:d<=today?pct(state.days[d]):0}));document.getElementById('weekChart').innerHTML=chartBars(weekItems);document.getElementById('weekSummary').textContent='Wochenschnitt bisher: '+weekAverage(today)+' % · Jeder Tag zählt gleich viel, auch ein Tag ohne erledigte Aufgaben.';
+ const weeks=[];let ws=startWeek(today);for(let i=7;i>=0;i--){const start=addDays(ws,-7*i),ds=Array.from({length:7},(_,j)=>addDays(start,j)).filter(d=>d<=today);const avg=ds.length?Math.round(ds.reduce((a,d)=>a+pct(state.days[d]),0)/ds.length):0;weeks.push({label:pretty(start,{day:'2-digit',month:'2-digit'}),value:avg})}document.getElementById('weeksChart').innerHTML=chartBars(weeks);
+ const months=[];const now=dateObj(today);for(let i=5;i>=0;i--){const first=new Date(now.getFullYear(),now.getMonth()-i,1,12),last=new Date(first.getFullYear(),first.getMonth()+1,0,12),a=localISO(first),b=localISO(last);let vals=[];for(let d=a;d<=b&&d<=today;d=addDays(d,1))vals.push(pct(state.days[d]));months.push({label:first.toLocaleDateString('de-DE',{month:'short'}),value:vals.length?Math.round(vals.reduce((x,y)=>x+y,0)/vals.length):0})}document.getElementById('monthChart').innerHTML=chartBars(months);
+ const keys=Object.keys(state.days).sort().reverse();document.getElementById('history').innerHTML=keys.length?keys.slice(0,30).map(d=>`<div class="day-row"><div class="day-label">${pretty(d,{day:'2-digit',month:'short'})}</div><div><div class="task-name">${DAY_NAMES[dateObj(d).getDay()]}</div><div class="task-meta">${doneCount(state.days[d])} / ${state.days[d].tasks.length} Aufgaben</div></div><strong>${pct(state.days[d])}%</strong></div>`).join(''):'<div class="empty">Deine gespeicherten Tage erscheinen hier.</div>';
+}
+function renderSettings(){document.getElementById('startDate').value=state.start;document.getElementById('endDate').value=state.end;document.getElementById('settingsTasks').innerHTML=state.tasks.map(t=>`<div class="task"><div class="task-main"><div class="task-name">${esc(t.name)}</div><div class="task-meta">${esc(t.description)}</div></div><span class="pill">Gewicht ${t.weight}</span></div>`).join('')}
+function saveDates(){const a=document.getElementById('startDate').value,b=document.getElementById('endDate').value;if(!a||!b||a>b){toast('Bitte gültigen Zeitraum wählen.');return}state.start=a;state.end=b;save();renderToday();toast('Zeitraum gespeichert.')}
+function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='winter-arc-backup.json';a.click();URL.revokeObjectURL(url)}
+function importData(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const x=JSON.parse(r.result);if(!x.tasks||!x.days)throw 0;state={...defaultState(),...x};save();renderAll();toast('Backup importiert.')}catch(err){toast('Datei konnte nicht importiert werden.')}};r.readAsText(f)}
+function renderAll(){renderToday();renderTraining();renderSettings();renderStats()}
+syncDay();renderAll();
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){syncDay();renderAll()}});
+window.addEventListener('focus',()=>{syncDay();renderAll()});
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
